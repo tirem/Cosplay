@@ -29,3 +29,7 @@ Type `/cos` or `/cosplay` with another player selected and you will cosplay as t
 Type `/cos off` or `/cos clear` to return to your normal look!
 
 As of right now cosplays aren't saved but that may be a feature I add in the future if it is requested.
+
+## Thank You!
+
+This addon was inspired by the sexchange addon so a thank you to the creator of the sexchange addon and Ashita v4 as a whole: **atom0s**
