@@ -169,7 +169,7 @@ ashita.events.register('packet_in', 'packet_in_cb', function (e)
 
     -- Packet: Zone Enter
     if (e.id == 0x000A) then
-        local p = ffi.cast('uint8_t*', e.data_modified_raw);
+        local p = ffi.cast('uint16_t*', e.data_modified_raw);
 
         -- Save incoming look for clearing
         OriginalLook.Head = p[0x46];
@@ -197,7 +197,7 @@ ashita.events.register('packet_in', 'packet_in_cb', function (e)
 
     -- Packet: Character Update
     if (e.id == 0x000D) then
-        local p = ffi.cast('uint8_t*', e.data_modified_raw);
+        local p = ffi.cast('uint16_t*', e.data_modified_raw);
         local i = struct.unpack('L', e.data_modified, 0x04 + 0x1);
         if (i == AshitaCore:GetMemoryManager():GetParty():GetMemberServerId(0) and p[0x0A] == 0x1F) then
 
@@ -235,7 +235,7 @@ ashita.events.register('packet_in', 'packet_in_cb', function (e)
 
     -- Packet: Character Appearance
     if (e.id == 0x0051) then
-        local p = ffi.cast('uint8_t*', e.data_modified_raw);
+        local p = ffi.cast('uint16_t*', e.data_modified_raw);
 
         -- Save incoming look for clearing
         OriginalLook.Head = p[0x06];
