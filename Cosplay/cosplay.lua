@@ -1,10 +1,11 @@
 -- Copyright (c) 2023 Tirem
+-- Some code used from sexchange addon and is copyrighted to atom0s and ashitav4
 
 addon.name      = 'Cosplay';
 addon.author    = 'Tirem';
 addon.version   = '1.0';
 addon.desc      = 'Copies the look at the targets gear and applies it to your self';
-addon.link      = 'https://ashitaxi.com/';
+addon.link      = 'https://github.com/tirem/Cosplay';
 
 require('common');
 local chat = require('chat');
@@ -225,13 +226,6 @@ ashita.events.register('packet_in', 'packet_in_cb', function (e)
             end
         end
     end
-
-    --[[ Packet: Character Jobs
-    if (e.id == 0x001B) then
-        local p = ffi.cast('uint8_t*', e.data_modified_raw);
-        p[0x04] = sexchange.race;
-    end
-    --]]
 
     -- Packet: Character Appearance
     if (e.id == 0x0051) then
